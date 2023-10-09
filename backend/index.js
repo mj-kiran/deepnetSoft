@@ -26,8 +26,9 @@ const app = express();
 app.use(
   cors({
     origin: [
-      'htttps://deploy-mern-1whq.vercel.app',
-      'https://6523bb1041955955f1240edc--loquacious-churros-9a5809.netlify.app/'
+      "htttps://deploy-mern-1whq.vercel.app",
+      "https://6523bb1041955955f1240edc--loquacious-churros-9a5809.netlify.app/",
+      "http://localhost:3000",
     ],
     methods: ["POST", "GET"],
     credentials: true,
@@ -41,12 +42,12 @@ app.use("/api/categories/subcategory", subcategoryRouter);
 
 app.use("/api/products", productRouter);
 
-// app.use(
-//   express.static(path.join(__dirname, 'frontend', 'build'))
-// );
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
-// });
+app.use(
+  express.static(path.join(__dirname, 'frontend', 'build'))
+);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+});
 
 app.listen(3300, () => {
   console.log("server started at 3300");
