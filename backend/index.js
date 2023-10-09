@@ -25,7 +25,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["htttps://deploy-mern-1whq.vercel.app"],
+    origin: [
+      'htttps://deploy-mern-1whq.vercel.app',
+      'https://6523bb1041955955f1240edc--loquacious-churros-9a5809.netlify.app/'
+    ],
     methods: ["POST", "GET"],
     credentials: true,
   })
