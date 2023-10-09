@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 import './Categories.css'
 import axios from "axios";
 import Table from "react-bootstrap/Table";
+import  BASE_URL  from "../service/BaseUrl";
 
 function Categories() {
      const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
      useEffect(() => {
        axios
-         .get("/api/categories/viewCategories")
+         .get(`${BASE_URL}api/categories/viewCategories`)
          .then((response) => {
            setCategories(response.data.categories);
-          //  console.log(response.data.categories);
+           //  console.log(response.data.categories);
            setLoading(false);
          })
          .catch((error) => {
