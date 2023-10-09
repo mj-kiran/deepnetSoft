@@ -39,10 +39,10 @@ app.use("/api/categories/subcategory", subcategoryRouter);
 app.use("/api/products", productRouter);
 
 app.use(
-  express.static(path.join(__dirname, "frontend", "build", "index.html"))
+  express.static(path.join(__dirname, 'frontend', 'build'))
 );
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/frontend/build/"));
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
 });
 
 app.listen(3300, () => {
