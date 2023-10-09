@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "proxy": [
     "http://localhost:3300",
-    "https://productlist-deepnet-ggkz.onrender.com"
+    "https://serverproduct.onrender.com/"
   ],
   "private": true,
   "dependencies": {
