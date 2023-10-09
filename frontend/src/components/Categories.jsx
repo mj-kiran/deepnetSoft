@@ -10,7 +10,7 @@ function Categories() {
     const [loading, setLoading] = useState(true);
      useEffect(() => {
        axios
-         .get(`${BASE_URL}api/categories/viewCategories`)
+         .get(`${BASE_URL}/api/categories/viewCategories`)
          .then((response) => {
            setCategories(response.data.categories);
            //  console.log(response.data.categories);
