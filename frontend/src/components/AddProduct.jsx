@@ -7,8 +7,6 @@ import { useParams } from "react-router-dom";
 import BASE_URL from "../service/BaseUrl";
 const AddProduct = () => {
   const [productName, setProductName] = useState("");
-    // const [categoryId, setCategoryId] = useState("");
-    // const [subcategoryId, setSubcategoryId] = useState("");
     const { categoryId, subcategoryId } = useParams();
     const navigate = useNavigate();
     // console.log(categoryId);
