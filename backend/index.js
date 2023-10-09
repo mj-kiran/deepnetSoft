@@ -7,7 +7,7 @@ import categoryRouter from "./routes/categoryRoutes.js";
 import subcategoryRouter from "./routes/subcategoryRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 
-// import path from "path";
+import path from "path";
 
 dotenv.config();
 
