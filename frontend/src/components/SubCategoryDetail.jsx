@@ -39,6 +39,7 @@ function SubCategoryDetail() {
         console.error("Error fetching products:", error);
       });
   }, [subcategoryId]);
+ 
 
   if (loading) {
     return <div>Loading...</div>;
