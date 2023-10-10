@@ -14,3 +14,17 @@
   justify-content: space-around;
   text-decoration: none;
 }
+.sc_b{
+  border-radius: none;
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+.sc_b:hover{
+  cursor: pointer;
+  border-radius: none;
+  border: none;
+  background-color: transparent;
+  color: black;
+  transform: scale(1.5);
+}
