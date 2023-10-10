@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from 'react-router-dom'
+import { Button } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import BASE_URL from "../service/BaseUrl";
 
@@ -12,6 +13,7 @@ function CategoryDetail() {
   const [loading, setLoading] = useState(true);
 
   const { categoryId } = useParams();
+  const navigate=useNavigate()
 
   useEffect(() => {
     axios
@@ -64,9 +66,9 @@ function CategoryDetail() {
       <h4>Subcategories({category.subcategories.length})</h4>
       <ul className="subcat_list">
         {category.subcategories.map((subcategory) => (
-          <Link to={`/category/${categoryId}/${subcategory._id}`}>
-            <li key={subcategory._id}>{subcategory.name}</li>
-          </Link>
+          <Button className="sc_b" onClick={()=>navigate(`/category/${categoryId}/${subcategory._id}`)} >
+            <span key={subcategory._id}>{subcategory.name}</span>
+          </Button>
         ))}
       </ul>
       
