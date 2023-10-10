@@ -2,24 +2,16 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
 import categoryRouter from "./routes/categoryRoutes.js";
 import subcategoryRouter from "./routes/subcategoryRoutes.js";
 import productRouter from "./routes/productRoutes.js";
+import db from "./db/connection.js";
 
 
 
 dotenv.config();
 
-mongoose
-  .connect(process.env.MONGODB_URL)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error", err);
-  });
-
+db()
 
 const app = express();
 
